@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamil Clicker - Incremental Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 YAMIL CLICKER 🎮</h1>
+            <p class="subtitle">Click to earn, upgrade to dominate!</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="label">Swag Points:</span>
+                <span id="points" class="value">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">Per Click:</span>
+                <span id="perClick" class="value">1</span>
+            </div>
+            <div class="stat">
+                <span class="label">Per Second:</span>
+                <span id="perSecond" class="value">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">Total Earned:</span>
+                <span id="totalEarned" class="value">0</span>
+            </div>
+        </div>
+
+        <main>
+            <div class="game-area">
+                <!-- Click Button -->
+                <div class="click-zone">
+                    <button id="clickButton" class="big-button">
+                        <div class="button-content">
+                            <span class="emoji">🧑</span>
+                            <span class="text">CLICK YAMIL</span>
+                        </div>
+                    </button>
+                    <p id="clickFeedback" class="click-feedback"></p>
+                </div>
+
+                <!-- Shop Section -->
+                <section class="shop">
+                    <h2>💰 UPGRADE SHOP</h2>
+                    <div class="upgrades-grid">
+                        <!-- Click Power -->
+                        <div class="upgrade-card" id="upgrade-clickPower">
+                            <div class="upgrade-header">
+                                <h3>⚡ Click Power</h3>
+                                <span class="level" id="level-clickPower">Lv. 1</span>
+                            </div>
+                            <p class="description">+5 points per click</p>
+                            <div class="cost">
+                                <span id="cost-clickPower">100</span> Swag
+                            </div>
+                            <button class="buy-btn" onclick="buyUpgrade('clickPower')">BUY</button>
+                        </div>
+
+                        <!-- Auto Clicker -->
+                        <div class="upgrade-card" id="upgrade-autoClicker">
+                            <div class="upgrade-header">
+                                <h3>🤖 Auto Clicker</h3>
+                                <span class="level" id="level-autoClicker">Lv. 0</span>
+                            </div>
+                            <p class="description">+1 Swag per second</p>
+                            <div class="cost">
+                                <span id="cost-autoClicker">500</span> Swag
+                            </div>
+                            <button class="buy-btn" onclick="buyUpgrade('autoClicker')">BUY</button>
+                        </div>
+
+                        <!-- Double Multiplier -->
+                        <div class="upgrade-card" id="upgrade-double">
+                            <div class="upgrade-header">
+                                <h3>x2 Double Boost</h3>
+                                <span class="level" id="level-double">Lv. 0</span>
+                            </div>
+                            <p class="description">x2 all earnings</p>
+                            <div class="cost">
+                                <span id="cost-double">1000</span> Swag
+                            </div>
+                            <button class="buy-btn" onclick="buyUpgrade('double')">BUY</button>
+                        </div>
+
+                        <!-- Triple Multiplier -->
+                        <div class="upgrade-card" id="upgrade-triple">
+                            <div class="upgrade-header">
+                                <h3>x3 Triple Boost</h3>
+                                <span class="level" id="level-triple">Lv. 0</span>
+                            </div>
+                            <p class="description">x3 all earnings</p>
+                            <div class="cost">
+                                <span id="cost-triple">5000</span> Swag
+                            </div>
+                            <button class="buy-btn" onclick="buyUpgrade('triple')">BUY</button>
+                        </div>
+
+                        <!-- Critical Hit -->
+                        <div class="upgrade-card" id="upgrade-critical">
+                            <div class="upgrade-header">
+                                <h3>💥 Critical Hit</h3>
+                                <span class="level" id="level-critical">Lv. 0</span>
+                            </div>
+                            <p class="description">+5% chance for 2x damage</p>
+                            <div class="cost">
+                                <span id="cost-critical">2000</span> Swag
+                            </div>
+                            <button class="buy-btn" onclick="buyUpgrade('critical')">BUY</button>
+                        </div>
+
+                        <!-- Prestige -->
+                        <div class="upgrade-card prestige-card" id="upgrade-prestige">
+                            <div class="upgrade-header">
+                                <h3>👑 PRESTIGE</h3>
+                                <span class="level" id="level-prestige">Lv. 0</span>
+                            </div>
+                            <p class="description">Reset for permanent x1.5 multiplier</p>
+                            <div class="cost">
+                                <span id="cost-prestige">50000</span> Swag
+                            </div>
+                            <button class="buy-btn prestige-btn" onclick="buyUpgrade('prestige')">PRESTIGE</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reset Button -->
+                <div class="reset-zone">
+                    <button id="resetButton" class="reset-btn" onclick="resetGame()">🔄 RESET GAME</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ by kauehrodas-dot | v1.0</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
